@@ -1,10 +1,6 @@
 class Draw_MM(object):
     def __init__(self, width_parameter):
         self.n= width_parameter
-        
-    def error_check(self):
-        # Check is parameter valid number for the application
-        if (self.n<=2 or self.n>=10000) or self.n%2!=1: return True
 
     def drawing(self):
         # Main drawing function. It draws M letter multiplied by 2.
@@ -51,8 +47,20 @@ class Draw_MM(object):
             
         print(last_row)
 
+def enter_parameter():
+    # Check is parameter valid number for the application
+    try: 
+        n= int(raw_input('Enter width parameter: '))
+        if (n<=2 or n>=10000) or n%2!=1: 
+            print('Parameter must be odd number between(and not equal) 2 and 10000!')
+            return enter_parameter()
+        else: 
+            return n
+    except ValueError: 
+        print('Please enter a whole number!')
+        return enter_parameter()
+
 if __name__ == '__main__':
-    parameter= input('Enter width parameter: ')
-    application= Draw_MM(parameter)
-    if not application.error_check(): application.drawing() #If no error
-    else: print('Parameter must be odd number between(and not equal) 2 and 10000!') #If error
+    parameter   = enter_parameter()
+    application = Draw_MM(parameter)
+    application.drawing()

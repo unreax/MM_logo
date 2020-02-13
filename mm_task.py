@@ -51,7 +51,7 @@ def enter_parameter():
     # Check is parameter valid number for the application
     try: 
         n= int(raw_input('Enter width parameter: '))
-        if (n<=2 or n>=10000) or n%2!=1: 
+        if (n<=2 or n>=10000) or n%2==0: 
             print('Parameter must be odd number between(and not equal) 2 and 10000!')
             return enter_parameter()
         else: 

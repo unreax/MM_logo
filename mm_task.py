@@ -4,17 +4,13 @@ class Draw_MM(object):
 
     def drawing(self):
         # Main drawing function. It draws M letter multiplied by 2.
-        first_row= (('-'*self.n + '*'*self.n)*2 + '-'*self.n)*2 #First and last rows are similar. 
-        last_row= (('*'*self.n + '-'*self.n)*2 + '*'*self.n)*2
         
-        first_and_last_dash = self.n-1  #Number of '-' in begining and end of M letter
-        fisrt_and_last_stars= self.n+2  #Number of '*' in body of M letter
-        middle_dashes       = self.n-2  #Number of '-' in the middle ot M letter
-        
-        print(first_row)
+        first_and_last_dash = self.n  #Number of '-' in begining and end of M letter
+        fisrt_and_last_stars= self.n  #Number of '*' in body of M letter
+        middle_dashes       = self.n  #Number of '-' in the middle ot M letter
         
         #This loop prints first half of MM
-        for row in range((self.n-1)/2):
+        for row in range((self.n+1)/2):
             print(  '-'*first_and_last_dash     + 
                     '*'*fisrt_and_last_stars    + 
                     '-'*middle_dashes           + 
@@ -31,7 +27,7 @@ class Draw_MM(object):
         middle_dashes       = 1
         
         #This loop prints second half of MM
-        for row in range((self.n-1)/2):
+        for row in range((self.n+1)/2):
             print(  '-'*first_and_last_dash     + 
                     '*'*fisrt_and_last_stars    + 
                     '-'*middle_dashes           + 
@@ -44,8 +40,6 @@ class Draw_MM(object):
             first_and_last_dash -= 1
             middle_dashes       += 2
             middle_stars        -= 2
-            
-        print(last_row)
 
 def enter_parameter():
     # Check is parameter valid number for the application

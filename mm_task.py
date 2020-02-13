@@ -26,13 +26,13 @@ class Draw_MM(object):
                     '-'*first_and_last_dash
                     ) * 2
             
-            first_and_last_dash = first_and_last_dash - 1
-            fisrt_and_last_stars= fisrt_and_last_stars + 2
-            middle_dashes       = middle_dashes - 2
+            first_and_last_dash -= 1
+            fisrt_and_last_stars+= 2
+            middle_dashes       -= 2
 
         fisrt_and_last_stars= self.n
         middle_stars        = (self.n*2)-1  #Number of '*' in the middle of M letter
-        middle_dashes      = 1
+        middle_dashes       = 1
         
         #This loop prints second half of MM
         for row in range((self.n-1)/2):
@@ -45,9 +45,9 @@ class Draw_MM(object):
                     '-'*first_and_last_dash
                     ) * 2
             
-            first_and_last_dash = first_and_last_dash - 1
-            middle_dashes       = middle_dashes + 2
-            middle_stars        = middle_stars - 2
+            first_and_last_dash -= 1
+            middle_dashes       += 2
+            middle_stars        -= 2
             
         print(last_row)
 
